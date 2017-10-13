@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #50475D;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-family: 'Courier New';
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #322740;
+}
+
+.active {
+    background-color: #7C6897;
+}
+h1 {
+	color: #330D63
+}
+h2 {
+	color: #7348A8
+}
+p {
+	font-family: 'Courier'
+	}
+</style>
+</head>
+<body>
+<h1><font face="Courier New">Location: Paris</font></h1>
+
+<ul>
+  <li><a href="dreamvacation.html">Home</a></li>
+  <li><a href="spain.html">Spain</a></li>
+  <li><a href="italy.html">Italy</a></li>
+  <li><a class="active" href="france.html">France</a></li>
+  <li><a href="denmark.html">Denmark</a></li>
+  <li style="float:right"><a href="sources.html">Sources</a></li>
+</ul>
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+var styles = [
+				{
+					featureType: "landscape",
+					stylers: [
+						{ color: '#eeddee' }
+					]
+				},{
+					featureType: "natural",
+					stylers: [
+						{ hue: '#8C3248' }
+					]
+				},{
+					featureType: "road",
+					stylers: [
+						{ hue: '#5500aa' },
+						{ saturation: -70 }
+					]
+				},{
+					featureType: "building",
+					elementType: "labels",
+					stylers: [
+						{ hue: '#000066' }
+					]
+				},{
+					featureType: "poi", //points of interest
+					stylers: [
+						{ hue: '#0044ff' }
+					]
+				}
+			];
+
+//latitude & longitude of where the map is centered
+//how zoomed in the map is 
+//mapProp is a dictionary similar to how your css styles worked
+//west and south have negative values for lat  and long
+var mapCenter = new google.maps.LatLng(48.8566, 2.3522);
+var mapProp= {
+    center:mapCenter,
+    zoom:6,
+    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: true,
+	styles: styles
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+var spainLoc1 = new google.maps.LatLng(41.390205, 2.154007 )
+var italyLoc2 = new google.maps.LatLng(37.7980, 12.4370 )
+var franceLoc3 = new google.maps.LatLng(48.8566, 2.3522)
+var denmarkLoc4 = new google.maps.LatLng(55.6761,12.5683 )
+
+//add some markers to the map for each spot
+//step 1: create the marker with a descriptive var name
+//the position is the LatLng object you created earlier
+var spainMarker = new google.maps.Marker({position: spainLoc1 });
+//step 2: add to map
+spainMarker.setMap(map);
+
+var italyMarker = new google.maps.Marker({position: italyLoc2});
+italyMarker.setMap(map);
+
+var franceMarker = new google.maps.Marker({position: franceLoc3});
+franceMarker.setMap(map);
+
+var denmarkMarker = new google.maps.Marker({position: denmarkLoc4});
+denmarkMarker.setMap(map);
+
+
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_u2k58DtV5YcHH_9C1p5swZz_TAA2qGE&callback=myMap&sensor=false"></script>
+
+<h2><font face="Courier New">Description</font></h2>
+<p>There are few cities on earth that capture the imaginations and hearts of travelers like Paris. The French capital is at once historic, modern, romantic, intellectual, grandiose and elegantly understated. First-time visitors often arrive in the City of Lights with grand expectations of extraordinary vistas, of stealing kisses from a lover along the Seine and of intellectuals debating weight matters in smoky cafes. You can find all these things and more in Paris, but the best way to enjoy the city is to explore the winding backstreets and avenues without any preconceptions at all.</p>
+<p>Nearly every corner of the city exudes enchantment, thanks largely to the French's love of beauty for beauty's sake. When Baron Haussman designed the city as it stands today, he purposefully combined utility with beauty. The result is a city marked by wide tree-lined boulevards, stunning views and parks or gardens around seemingly every corner. The most beautiful places in Paris are often these green spaces, like the Jardin du Luxembourg with its Florentine-style palace and dramatic botanical arrangements that explode into color during spring. Beauty also abounds at the Tuileries Garden, with roots that date back to the 16th century. The pathways stretch from just behind the Louvre to a hilly picnic area perfect for spending an afternoon in the sun.</p>
+
+<p>Artistic vibrancy resonates throughout Paris, and the city's museums house some of the world's richest and most important collections. It would take a lifetime to fully experience the Louvre, home to the world's most diverse and extensive collection of pre-20th century art. Although the museum is most famous for housing the Venus de Milo and the Mona Lisa, visitors can also bask in the works of Rembrandt, Caravaggio, Vermeer and countless others. Other equally impressive museums include the modern Centre Georges Pompidou, the light and airy Musee d'Orsay and the Rodin Museum, home to The Thinker and a lovely sculpture garden.</p>
+<p>No visit to Paris would be complete without a trip to the Eiffel Tower. Once considered an abomination, the tower is now a symbol of the city and an icon of France. During the day, enjoy a picnic on the sprawling Champs de Mars with the tower providing one of the world's most romantic backdrops. Visit again after the sun sets to watch the tower sparkle with thousands of glittering lights. It is an absolutely breathtaking sight that every traveler should experience at least once.</p> 
+<p>Other must-see sights include the Arc de Triomphe, France's tribute to Napoleon and unknown soldiers, the Pere Lachaise cemetery, final resting place of Edith Piaf, Oscar Wilde and other notables, and the Notre Dame Cathedral, one of the world's most impressive examples of Gothic architecture.</p>
+
+<img src="paris.jpg" alt="paris with an eiffel tower view" height="600" width="100%">
+
+<p><h2><font face="Courier New">Itinerary</font></h2>
+<a href="https://www.tripadvisor.com/Attractions-g187147-Activities-Paris_Ile_de_France.html"><font face="Courier">Top 10 Things to Do in Paris</font></a>
+
+</p>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

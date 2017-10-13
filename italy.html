@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #50475D;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-family: 'Courier New';
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #322740;
+}
+
+.active {
+    background-color: #7C6897;
+}
+h1 {
+	color: #330D63
+}
+h2 {
+	color: #7348A8
+}
+p {
+	font-family: 'Courier'
+	}
+</style>
+</head>
+<body>
+<h1><font face="Courier New">Location: Marsala</font></h1>
+
+<ul>
+  <li><a href="dreamvacation.html">Home</a></li>
+  <li><a href="spain.html">Spain</a></li>
+  <li><a class="active" href="italy.html">Italy</a></li>
+  <li><a href="france.html">France</a></li>
+  <li><a href="denmark.html">Denmark</a></li>
+  <li style="float:right"><a href="sources.html">Sources</a></li>
+</ul>
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+var styles = [
+				{
+					featureType: "landscape",
+					stylers: [
+						{ color: '#eeddee' }
+					]
+				},{
+					featureType: "natural",
+					stylers: [
+						{ hue: '#8C3248' }
+					]
+				},{
+					featureType: "road",
+					stylers: [
+						{ hue: '#5500aa' },
+						{ saturation: -70 }
+					]
+				},{
+					featureType: "building",
+					elementType: "labels",
+					stylers: [
+						{ hue: '#000066' }
+					]
+				},{
+					featureType: "poi", //points of interest
+					stylers: [
+						{ hue: '#0044ff' }
+					]
+				}
+			];
+
+//latitude & longitude of where the map is centered
+//how zoomed in the map is 
+//mapProp is a dictionary similar to how your css styles worked
+//west and south have negative values for lat  and long
+var mapCenter = new google.maps.LatLng(37.7980, 12.4370);
+var mapProp= {
+    center:mapCenter,
+    zoom:6,
+    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: true,
+	styles: styles
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+var spainLoc1 = new google.maps.LatLng(41.390205, 2.154007 )
+var italyLoc2 = new google.maps.LatLng(37.7980, 12.4370 )
+var franceLoc3 = new google.maps.LatLng(48.8566, 2.3522)
+var denmarkLoc4 = new google.maps.LatLng(55.6761,12.5683 )
+
+//add some markers to the map for each spot
+//step 1: create the marker with a descriptive var name
+//the position is the LatLng object you created earlier
+var spainMarker = new google.maps.Marker({position: spainLoc1 });
+//step 2: add to map
+spainMarker.setMap(map);
+
+var italyMarker = new google.maps.Marker({position: italyLoc2});
+italyMarker.setMap(map);
+
+var franceMarker = new google.maps.Marker({position: franceLoc3});
+franceMarker.setMap(map);
+
+var denmarkMarker = new google.maps.Marker({position: denmarkLoc4});
+denmarkMarker.setMap(map);
+
+
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_u2k58DtV5YcHH_9C1p5swZz_TAA2qGE&callback=myMap&sensor=false"></script>
+
+<h2><font face="Courier New">Description</font></h2>
+<p>Aside from being the name of a sauce made from reduced wine, Marsala is a prominent city 
+in Italy.</p>
+<p>The heart of Marsala is the piazza in front of the town&apos;s Duomo, which is dedicated to St. Thomas a Becket. This square, called Piazza della Repubblica or Piazza Loggia, is a pleasant place for a promenade or refreshments at the cafe opposite the cathedral. The Duomo has had an unlucky career, being rebuilt several times on its original Norman foundations. After a seventeenth-century reconstruction, the building collapsed in the nineteenth century, was restored, then was severely damaged again in Second World War bombing. The final touches were put to the facade in the 1950s.</p>
+
+<p> You&apos;ll see other restorations of historic buildings in Marsala, many carried out recently. A few buildings have been re-interpreted with a bold modernist style setting off their surviving original features, to mixed success.
+
+Look out for the fabulous lion&apos;s head over the gateway through which Garibaldi led his men, now called the Porta Garibaldi. Other fine palazzi and ornate balconies dot the long narrow streets of the town centre. One of the most elegant buildings is the town hall, alongside the Duomo.
+
+Marsala
+Visitors interested in the local wine will find various bars and enoteche (wine bars/shops) where Marsala can be sampled and purchased. Look out for the world 'baglio', used for the local cellars and HQs of wine production. Several of these can be visited, and for drivers, the area has created a &apos;wine-road&apos; for tourists, the Strada del Vino Marsala, connecting wine-producers who offer guided tours and tastings. Note that Marsala is strong stuff.
+
+In addition to the important archaeological museum, described below, Marsala also has a couple of other museums: the Museo Civico and the Museo degli Arazzi Fiamminghi, a museum containing some sixteenth-century Flemish tapestries.</p> 
+
+<img src="marsala.jpg" alt="marsala" height="600" width="100%">
+
+<p><h2><font face="Courier New">Itinerary</font></h2>
+<a href="https://www.tripadvisor.com/Attractions-g187497-Activities-Barcelona_Catalonia.html"><font face="Courier">Top 10 Things to Do in Marsala</font></a>
+
+</p>
+
+
+
+
+
+
+
+
+</body>
+</html>
